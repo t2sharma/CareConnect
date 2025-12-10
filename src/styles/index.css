@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cc-radius-md: 8px;
+  --cc-radius-lg: 12px;
+  --cc-radius-xl: 16px;
+}
+
+body {
+  @apply bg-cc-bg text-cc-text font-sans antialiased;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.8);
+  border-radius: 9999px;
+}
+
+@keyframes cc-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cc-bubble-in {
+  animation: cc-bubble-in 150ms ease-out;
+}
+
+@keyframes cc-modal-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cc-modal-panel {
+  animation: cc-modal-enter 160ms ease-out;
+}
